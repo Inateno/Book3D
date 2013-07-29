@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>3DBookJS</title>
+    <link rel="icon" type="image/png" href="fav.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/Book3D.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!-- I wrote the css inside the dom to get the CSS file clean from "custom" style :) -->
+    <div class="book" style="position:absolute;top:0;left:0;bottom:0;right:0;">
+      <div class="centered book3D autoload">
+        <div class="page">
+          <div class="front">
+            <img src="img/title.png" style="margin-top:260px"/>
+          </div>
+          <div class="back">
+            <h2>The 3D Book</h2>
+            <p>
+              Hi guys,
+              <br />
+              This book present you my little libs 3dbookjs, to realise
+              book like this one, easily and quickly.
+              <br />
+              It's on Git Hub, free and open source (sure).
+              <br />
+              Share, change, and use it!
+              <br />
+              I hope you'll like it and let me know every usage, or change, I'll be verry happy to heard about you -> @Inateno.
+            </p>
+          </div>
+        </div>
+        
+        <div class="page">
+          <div class="front">
+            <h2>Write a book</h2>
+            <p>
+              The book need to be inside a element with the class "book" to get 3d perspective.
+              <br />
+              So basic declaration for a book is:
+              <textarea cols="25" rows="4">
+<div class="book">
+  <div class="book3D">
+  </div>
+</div></textarea>
+              <br />
+              You can optionnaly add classes centered and autoload.<br />
+              <b>autoload</b> will declare your book with no more code than the library included
+              <br />
+              <b>centered</b> will center the div in the parent
+            </p>
+          </div>
+          
+          <div class="back">
+          </div>
+        </div>
+        
+        <div class="page">
+          <div class="front">
+            <h2>Making pages</h2>
+            <p>
+              When you make page you need to create a front and a back for this page.
+              <br />
+              <textarea cols="25" rows="4">
+<div class="page">
+  <div class="front"></div>
+  <div class="back"></div>
+</div></textarea>
+              <br />
+              Pretty simple mmh ?
+            </p>
+          </div>
+          
+          <div class="back">
+            <h2>Sizing the book</h2>
+            <p>
+              It's only some CSS,
+              I didn't make responsive yet, maybe soon maybe not, if you need it you'll do it.
+            </p>
+          </div>
+        </div>
+        
+        <div class="page">
+          <div class="front">
+            <h2>No real time binding</h2>
+            <p>
+              There is no real time binding on page, to improve performances I decided to get only 1 time the pages : var _pages = $( '#book>.page' )
+              <br />
+              But you can call Book.refreshBinding() to refresh it, if you add pages with Ajax or other stuff.
+            </p>
+          </div>
+          
+          <div class="back">
+          </div>
+        </div>
+        
+        
+        <div class="page">
+          <div class="front">
+          </div>
+          
+          <!-- GA start -->
+          <div class="back">
+          </div>
+        </div>
+        
+        <div class="page">
+          <div class="front">
+          </div>
+          <!-- GA end -->
+          
+          <div class="back">
+          </div>
+        </div>
+        
+        <div class="page">
+          <div class="front">
+          </div>
+          
+          <div class="back">
+          </div>
+        </div>
+        
+        <div class="page">
+          <div class="front">
+          </div>
+          <div class="back">
+            <h2>The End</h2>
+            <p>
+              Have fun and see you maybe ^_^
+            </p>
+          </div>
+        </div>
+        
+        <button data-origin="previous" style="display:none" class="btn"><<</button>
+        <button data-origin="next" class="btn">>></button>
+      </div>
+    </div>
+    
+    <!-- open and close fxs -->
+    <div style="position:absolute;bottom: 0; left: 50%; margin-left:-200px; width: 400px;text-align:center;">
+      <button id="flipStart">Flip Start</button> -- 
+      <button id="flipEnd">Flip End</button>
+    </div>
+    
+    <!-- credits :p -->
+    <div style="position: absolute; top: 0; background-color:rgba(0,0,0,0.8);border-bottom-left-radius:5px;border-bottom-right-radius:5px;color: white; padding: 10px;text-align:center;">
+      A library made by <a href="https://twitter.com/Inateno">Inateno</a>
+      <br />
+      <a href="https://github.com/Inateno/Book3D" style="color:rgb(50,150,50)">Get it on Github</a>
+    </div>
+  </body>
+</html>
